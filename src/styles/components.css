@@ -1,0 +1,112 @@
+@import './variables.css';
+
+/* Global sizing tuned to a very wide retail layout (like large supermarket sites) */
+:root { --site-max-width: 1600px; --site-gutter: 32px; }
+
+html,body,#root {
+  height: 100%;
+}
+
+body {
+  background: var(--bg-gradient-a);
+  color: #111;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hero for the Manage area — very large, full-bleed with centered inner container */
+.manage-hero {
+  width: 100%;
+  padding: 56px 0;
+  box-sizing: border-box;
+}
+
+.manage-hero-inner {
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  padding: 24px var(--site-gutter);
+  color: var(--text-on-vivid);
+}
+
+.manage-hero h1 {
+  margin: 0 0 12px 0;
+  font-size: 4rem; /* very large */
+  line-height: 1.02;
+  text-shadow: 0 6px 18px rgba(111,0,255,0.25);
+}
+
+.manage-hero p {
+  margin: 0 0 20px 0;
+  font-size: 1.25rem;
+  opacity: 0.95;
+}
+
+/* Main container constrains content to a very wide width similar to big retail sites */
+.manage-container {
+  max-width: var(--site-max-width);
+  margin: 24px auto;
+  padding: 0 var(--site-gutter) 120px var(--site-gutter);
+  box-sizing: border-box;
+}
+
+/* Grid of management cards */
+.manage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--muted-surface);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  padding: 18px;
+  border-radius: 14px;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.manage-card h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+}
+
+.manage-card p {
+  margin: 0 0 12px 0;
+  color: rgba(255,255,255,0.9);
+}
+
+.btn-primary {
+  background: var(--accent-gradient);
+  color: var(--text-on-vivid);
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(111,0,255,0.18), 0 4px 10px rgba(0,230,168,0.08);
+  border: none;
+  transition: transform .12s ease, box-shadow .12s ease;
+  cursor: pointer;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(111,0,255,0.22); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-on-vivid);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.manage-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* Make text / UI scale larger on wide screens (to emulate large retail sites) */
+@media (min-width: 1200px) {
+  .manage-hero h1 { font-size: 5.2rem; }
+  .manage-hero p { font-size: 1.35rem; }
+}

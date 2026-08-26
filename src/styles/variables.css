@@ -1,0 +1,13 @@
+:root{
+  /* Neon Sunset palette */
+  --neon-orange: #FF7A00;
+  --neon-pink:   #FF3B8C;
+  --neon-yellow: #FFD200;
+  --neon-teal:   #00E6A8;
+  --neon-purple: #6F00FF;
+
+  --bg-gradient-a: linear-gradient(135deg, var(--neon-orange), var(--neon-pink));
+  --accent-gradient: linear-gradient(90deg, var(--neon-purple), var(--neon-teal));
+  --text-on-vivid: #ffffff;
+  --muted-surface: rgba(255,255,255,0.06);
+}
